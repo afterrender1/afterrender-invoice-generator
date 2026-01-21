@@ -36,7 +36,7 @@ export default function InvoiceGenerator() {
                         <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-indigo-200 shadow-lg">
                             <FileText size={18} className="text-white" />
                         </div>
-                        <span className="font-bold tracking-tight text-slate-800">InvoicePro</span>
+                        <span className="font-bold tracking-tight text-slate-800">Invoice Generator (Afterrrender) </span>
                     </div>
 
                     {/* Desktop Status */}
@@ -144,7 +144,7 @@ export default function InvoiceGenerator() {
                         <PDFDownloadLink
                             document={<InvoicePDF client={client} items={items} dates={dates} issue_id={issueId} />}
                             fileName={`invoice_${issueId}.pdf`}
-                            className="w-full md:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-indigo-600 shadow-lg shadow-indigo-100 transition-all active:scale-95"
+                            className="w-full md:w-auto px-8 py-4 bg-slate-900 text-white rounded-lg font-medium flex items-center justify-center gap-3 hover:bg-indigo-600 shadow-lg shadow-indigo-100 transition-all active:scale-95"
                         >
                             {({ loading }) => (
                                 <>
