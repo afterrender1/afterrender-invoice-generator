@@ -40,8 +40,8 @@ export default function InvoicePDF({ client, items, dates, issue_id }) {
                             <Image src="/images/arlogo.png" style={styles.logoImage} />
                         </View>
                         <Text style={styles.companyEmail}>From</Text>
-                        <Text style={styles.companyName}>AfterRender Studio</Text>
-                        <Text style={styles.companyEmail}>video@afterrender.com</Text>
+                        <Text style={styles.companyName}>AfterRender</Text>
+                        <Text style={styles.companyEmail}>afterrenderagency@gmail.com</Text>
                     </View>
                     <View style={styles.invoiceInfo}>
                         <Text style={styles.invoiceTitle}>INVOICE</Text>
