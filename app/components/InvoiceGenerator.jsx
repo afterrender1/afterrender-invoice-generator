@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import InvoicePDF from "./InvoicePDF";
 import { PlusCircle, Trash2, Eye, Edit3, Download, FileText } from "lucide-react";
+import { inter } from "@/app/fonts";
 
 export default function InvoiceGenerator() {
     const [view, setView] = useState("edit");
@@ -28,7 +29,7 @@ export default function InvoiceGenerator() {
     const total = items.reduce((sum, i) => sum + (Number(i.qty || 0) * Number(i.price || 0)), 0);
 
     return (
-        <div className="min-h-screen bg-[#F3F4F6] font-sans text-slate-900">
+        <div className={`min-h-screen bg-[#F3F4F6] font-sans text-slate-900 ${inter.className}`}>
             {/* Nav Header */}
             <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
                 <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
