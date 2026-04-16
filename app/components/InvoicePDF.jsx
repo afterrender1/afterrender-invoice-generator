@@ -2,6 +2,16 @@ import { Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/render
 
 const styles = StyleSheet.create({
     page: { padding: 60, fontSize: 10, fontFamily: "Helvetica", color: "#1a1a1a", lineHeight: 1.6 },
+    watermark: {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        width: 400,
+        height: 400,
+        transform: "translate(-200, -200) rotate(120deg)",
+        opacity: 0.40,
+
+    },
     header: { flexDirection: "row", justifyContent: "space-between", marginBottom: 60 },
     logoContainer: { width: 60, height: 60, marginBottom: 12 },
     logoImage: { width: '100%', height: '100%', objectFit: 'contain' },
@@ -28,12 +38,15 @@ const styles = StyleSheet.create({
 });
 
 export default function InvoicePDF({ client, items, dates, issue_id }) {
-    // Math logic: Ensure empty strings or undefined convert to 0
     const total = items.reduce((sum, i) => sum + (Number(i.qty || 0) * Number(i.price || 0)), 0);
 
     return (
         <Document>
             <Page size="A4" style={styles.page}>
+
+                {/* Background Watermark */}
+                <Image src="/images/arwm.png" style={styles.watermark} fixed />
+
                 <View style={styles.header}>
                     <View>
                         <View style={styles.logoContainer}>
